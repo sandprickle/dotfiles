@@ -1,0 +1,66 @@
+# Nix
+if [ -e /home/bdm/.nix-profile/etc/profile.d/nix.sh ]; then . /home/bdm/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+# End Nix
+
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME="candy"
+
+plugins=(git ssh-agent tmux git-auto-fetch direnv starship)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# Add ~/.local/bin to PATH
+export PATH=$PATH:~/.local/bin
+
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='vi'
+fi
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Deno
+export DENO_INSTALL="$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+# Mcfly
+eval "$(mcfly init zsh)"
+
+# Starship
+# https://starship.rs/
+eval "$(starship init zsh)"
+
+export GPG_TTY=$(tty)
+
+# https://github.com/zsh-users/zsh-syntax-highlighting
+source ~/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# GHC 
+[ -f "/home/bdm/.ghcup/env" ] && source "/home/bdm/.ghcup/env" # ghcup-env
+
+# pnpm
+export PNPM_HOME="/Users/bryce/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+# bun completions
+[ -s "/Users/bryce/.bun/_bun" ] && source "/Users/bryce/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Devbox
+eval "$(devbox global shellenv)"

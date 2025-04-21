@@ -1,0 +1,16 @@
+{
+  "$schema": "https://zed.dev/schema/themes/v0.1.0.json",
+  "name": "Dracula Pro Themes",
+  "author": "Zeno Rocha via Bryce Miller",
+  "themes": [
+    {
+      "name": "Dracula Pro",
+      "appearance": "dark",
+      "style": {
+        "editor.background": "#22212C",
+        "editor.foreground": "#F8F8F2",
+        "text.muted": "#7970A9"
+      }
+    }
+  ]
+}

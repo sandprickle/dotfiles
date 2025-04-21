@@ -1,0 +1,16 @@
+// Static tasks configuration.
+[
+  {
+    "label": "Word Count",
+    "command": "wc -w $ZED_FILE",
+    "reveal": "always",
+    "use_new_terminal": false
+  },
+  {
+    "label": "cargo run",
+    "command": "cargo run",
+    "reveal_target": "dock",
+    "reveal": "no_focus",
+    "use_new_terminal": false
+  }
+]
