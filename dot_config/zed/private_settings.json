@@ -7,16 +7,19 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "auto_update_extensions": {
+    "zig": false
+  },
+  "icon_theme": "Catppuccin Mocha",
   "features": {
     "edit_prediction_provider": "zed"
   },
   "theme": "Catppuccin Mocha",
-  "assistant": {
+  "agent": {
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-3-7-sonnet-latest"
     },
-    "version": "2"
   },
   "edit_predictions": {
     "disabled_globs": [".env"]
