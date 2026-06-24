@@ -1,0 +1,8 @@
+theme = Catppuccin Mocha
+font-family = MonoLisa
+
+{{ if eq .chezmoi.os "darwin" }}
+command = /Users/bryce/.nix-profile/bin/fish
+{{ else if eq .chezmoi.os "linux" }}
+command = fish
+{{ end }}
