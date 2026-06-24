@@ -64,3 +64,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Devbox
 eval "$(devbox global shellenv)"
+
+# Go
+export PATH=$PATH:$HOME/go/bin
